@@ -206,12 +206,12 @@ def save_data( zX : XZarr , zZ : XZarr ):
 						pass
 				
 				## Add BC attributes
-				oncfile.setncattr( "bc_creation_date" , str(dt.datetime.utcnow())[:19] + " (UTC)" )
-				oncfile.setncattr( "bc_method"        , xsbckParams.method )
-				oncfile.setncattr( "bc_period_calibration" , "/".join( [str(x) for x in xsbckParams.calibration] ) )
-				oncfile.setncattr( "bc_window"        , ",".join( [str(x) for x in xsbckParams.window] ) )
-				oncfile.setncattr( "bc_reference"     , build_reference(xsbckParams.method) )
-				oncfile.setncattr( "bc_pkgs_versions" , ", ".join( [f"XSBCK:{version}"] + [f"{name}:{pkg.__version__}" for name,pkg in zip(["SBCK","numpy","xarray","dask","distributed","zarr","netCDF4"],[SBCK,np,xr,dask,distributed,zarr,netCDF4]) ] ) )
+				# oncfile.setncattr( "bc_creation_date" , str(dt.datetime.utcnow())[:19] + " (UTC)" )
+				# oncfile.setncattr( "bc_method"        , xsbckParams.method )
+				# oncfile.setncattr( "bc_period_calibration" , "/".join( [str(x) for x in xsbckParams.calibration] ) )
+				# oncfile.setncattr( "bc_window"        , ",".join( [str(x) for x in xsbckParams.window] ) )
+				# oncfile.setncattr( "bc_reference"     , build_reference(xsbckParams.method) )
+				# oncfile.setncattr( "bc_pkgs_versions" , ", ".join( [f"XSBCK:{version}"] + [f"{name}:{pkg.__version__}" for name,pkg in zip(["SBCK","numpy","xarray","dask","distributed","zarr","netCDF4"],[SBCK,np,xr,dask,distributed,zarr,netCDF4]) ] ) )
 				
 				## Start with dimensions
 				dims   = [d for d in incfile.dimensions]
